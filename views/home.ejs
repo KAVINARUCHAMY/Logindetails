@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/css/bootstrap') %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+
+    <div class="container">
+        
+
+        <form method="post" action="/user/home">
+            <h5>Welcome <%= useNew.fullname %></h5>
+
+            <h3 class="my-4">Add Additional Details</h3>
+
+            <div class="my-3">
+        
+                <label for="age" class="form-label">Age: </label>
+                <input type="number" name="age" id="age" class="form-label" required><br>
+            </div>
+            <div class="my-3">
+                <label for="gender" class="form-label">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br>
+            </div> 
+
+            <div class="my-3">
+                <label for="dob" class="form-label">Date of Birth:</label>
+                <input type="date" name="dob" id="dob" class="form-label"><br>
+            </div>
+
+            <div class="my-3">
+                <label for="mobileno" class="form-label">Mobile Number:</label>
+                <input type="tel" name="mobileno"id="mobileno" class="form-label" required><br><br>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button></t>
+            <button type="submit" name="login" class="btn btn-primary" id="logout">Logout</button>
+            
+        </form>
+    </div>
+    <script>
+        document.getElementById('logout').addEventListener('click', function() {
+          
+          window.location.href = '/login'; 
+        });
+      </script>
+
+    
+</body>
+
+</html>
+
+
